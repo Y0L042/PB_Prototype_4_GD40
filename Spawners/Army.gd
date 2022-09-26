@@ -8,7 +8,6 @@ class_name Army
 var army_position: Vector2 = Vector2.ZERO
 var army_target: Vector2 = Vector2.ZERO
 
-var BASE_SOLDIER: Soldier
 @export var soldier_amount: int = 0
 @onready var shared_area: Area2D = $SharedArea
 
@@ -20,8 +19,8 @@ var active_soldiers: Array = []
 #-------------------------
 func _ready() -> void:
 	for index in range(0, soldier_amount):
-		var BASE_SOLDIER = Soldier.new()
-		append_to_arrays(BASE_SOLDIER.spawn_soldier(random_offset(army_position), shared_area))
+		var soldier = Soldier.new()
+		append_to_arrays(soldier.spawn_soldier(random_offset(army_position), shared_area))
 
 
 #-------------------------

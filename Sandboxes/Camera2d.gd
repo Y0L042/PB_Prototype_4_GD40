@@ -33,7 +33,7 @@ func get_target_position():
 #-------------------------
 # Initialize
 #-------------------------
-func init(new_master, _new_master_position: Vector2 = Vector2.ZERO):
+func init(_new_master, _new_master_position: Vector2 = Vector2.ZERO):
 	set_master()
 	set_target_position(get_master().army_position)
 
