@@ -134,12 +134,18 @@ func soldier_move(soldier: Soldier, delta: float, new_target: Vector2, soldier_t
 #	if PhysicsServer2D.body_test_motion(soldier.soldier_body, params):
 #		soldier.velocity_vector = Vector2.ZERO
 
+
+
 	# Add velocity to position, ZERO if collision occurs
 	soldier.current_position += soldier.velocity_vector
 	soldier_transform.origin = soldier.current_position
 
 	# Move body
-	PhysicsServer2D.body_set_state(soldier.soldier_body, PhysicsServer2D.BODY_STATE_TRANSFORM, soldier_transform)
+#	PhysicsServer2D.body_set_state(soldier.soldier_body, PhysicsServer2D.BODY_STATE_TRANSFORM, soldier_transform)
+
+	# Apply force to body
+	PhysicsServer2D.body_apply_force(soldier.soldier_body, soldier.velocity_vector)
+	PhysicsServer2D.body_get_continuous_collision_detection_mode()
 
 	# Move shape in shared_area
 	PhysicsServer2D.area_set_shape_transform(shared_area.get_rid(), index, soldier_transform)
