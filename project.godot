@@ -14,7 +14,7 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://Spawners/Army.gd"
 }, {
-"base": "RefCounted",
+"base": "PhysicsTestMotionParameters2D",
 "class": &"Soldier",
 "language": &"GDScript",
 "path": "res://Soldiers/Soldier.gd"
