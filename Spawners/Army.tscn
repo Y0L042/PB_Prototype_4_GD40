@@ -12,6 +12,8 @@ script = ExtResource("1_astbo")
 [node name="SharedArea" type="Area2D" parent="."]
 
 [node name="Area2d" type="Area2D" parent="."]
+monitoring = false
+monitorable = false
 script = ExtResource("2_pcou6")
 
 [node name="CollisionShape2d" type="CollisionShape2D" parent="Area2d"]
