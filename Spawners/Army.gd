@@ -42,6 +42,8 @@ func _physics_process(delta: float) -> void:
 
 
 func _draw() -> void:
+#	all_soldiers.sort_custom(func(a, b): return a.soldier_position.y > b.soldier_position.y)
+
 	for index in range(0, all_soldiers.size()):
 		var soldier = all_soldiers[index]
 		draw_texture(soldier.texture, soldier.current_position)
