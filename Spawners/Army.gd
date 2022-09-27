@@ -26,30 +26,45 @@ func _ready() -> void:
 	world_space = get_viewport().world_2d.space
 	for index in range(0, soldier_amount):
 		var soldier = Soldier.new()
+<<<<<<< Updated upstream
 		append_to_arrays(spawn_soldier(soldier))
 
+=======
+		append_to_arrays(soldier.spawn_soldier(random_offset(army_position), shared_area, self))
+>>>>>>> Stashed changes
 
 
 #-------------------------
 # Runtime
 #-------------------------
 func _physics_process(delta: float) -> void:
+<<<<<<< Updated upstream
 
 	var soldier_transform = Transform2D()
+=======
+>>>>>>> Stashed changes
 	army_target = get_target()
 
 	for index in range(0, active_soldiers.size()): #
 		var soldier: Soldier = active_soldiers[index]
+<<<<<<< Updated upstream
 		soldier_move(soldier, delta, army_target, soldier_transform, index)
+=======
+		soldier.soldier_move(delta, shared_area, index, army_target, all_soldiers)
+>>>>>>> Stashed changes
 
 	queue_redraw()
 
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 func _draw() -> void:
 	for index in range(0, all_soldiers.size()):
 		var soldier = all_soldiers[index]
-		draw_texture(soldier.texture, soldier.current_position)
+		var draw_position: Vector2 = soldier.soldier_position - Vector2(soldier.SHAPE_SIZE, soldier.SHAPE_SIZE)*1.3
+		draw_texture(soldier.texture, draw_position)
 
 
 
@@ -75,7 +90,7 @@ func get_target() -> Vector2:
 
 
 func random_offset(center_point: Vector2) -> Vector2:
-	var radius: int = 500
+	var radius: int = 1000
 	var offset: Vector2 = center_point
 	offset.x += randi_range(-radius, radius)
 	offset.y += randi_range(-radius, radius)

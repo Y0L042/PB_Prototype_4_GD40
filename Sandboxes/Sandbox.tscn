@@ -12,7 +12,11 @@ texture = ExtResource("1_5708e")
 
 [node name="Army" parent="." instance=ExtResource("1_pq3cg")]
 y_sort_enabled = true
+<<<<<<< Updated upstream
 soldier_amount = 5
+=======
+soldier_amount = 100
+>>>>>>> Stashed changes
 
 [node name="Camera2d" type="Camera2D" parent="Army"]
 current = true
