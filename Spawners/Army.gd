@@ -20,21 +20,19 @@ var active_soldiers: Array = []
 func _ready() -> void:
 	for index in range(0, soldier_amount):
 		var soldier = Soldier.new()
-		append_to_arrays(soldier.spawn_soldier(random_offset(army_position), shared_area))
+		append_to_arrays(soldier.spawn_soldier(random_offset(army_position), shared_area, self))
 
 
 #-------------------------
 # Runtime
 #-------------------------
 func _physics_process(delta: float) -> void:
-	var soldier_transform = Transform2D()
-
 	army_target = get_target()
 
 	for index in range(0, active_soldiers.size()): #
 		var soldier: Soldier = active_soldiers[index]
 
-		soldier.soldier_move(delta, shared_area, index, soldier_transform, army_target)
+		soldier.soldier_move(delta, shared_area, index, army_target)
 
 	queue_redraw()
 
