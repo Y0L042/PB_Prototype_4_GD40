@@ -45,7 +45,7 @@ func _physics_process(delta: float) -> void:
 	zoom_level = lerp(zoom_level, desired_zoom, ZOOM_RATE * delta)
 	self.set_zoom(Vector2(zoom_level, zoom_level))
 
-	set_target_position(get_global_mouse_position())
+#	set_target_position(get_global_mouse_position())
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("ui_scrollup"):
