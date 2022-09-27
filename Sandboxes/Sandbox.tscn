@@ -12,11 +12,7 @@ texture = ExtResource("1_5708e")
 
 [node name="Army" parent="." instance=ExtResource("1_pq3cg")]
 y_sort_enabled = true
-<<<<<<< Updated upstream
-soldier_amount = 5
-=======
 soldier_amount = 100
->>>>>>> Stashed changes
 
 [node name="Camera2d" type="Camera2D" parent="Army"]
 current = true
@@ -25,8 +21,8 @@ smoothing_enabled = true
 smoothing_speed = 3.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
-drag_left_margin = 0.99
-drag_top_margin = 0.99
-drag_right_margin = 0.99
-drag_bottom_margin = 0.99
+drag_left_margin = 0.95
+drag_top_margin = 0.95
+drag_right_margin = 0.95
+drag_bottom_margin = 0.95
 script = ExtResource("2_4yxh5")
