@@ -1,12 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://bt1tenb1m1e1f"]
+[gd_scene load_steps=5 format=3 uid="uid://bt1tenb1m1e1f"]
 
 [ext_resource type="Script" path="res://Spawners/Army.gd" id="1_astbo"]
 [ext_resource type="Script" path="res://Spawners/Area2d.gd" id="2_pcou6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1kc2q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_82p0u"]
 radius = 100.0
 
 [node name="Army" type="Node2D"]
+material = SubResource("ShaderMaterial_1kc2q")
 script = ExtResource("1_astbo")
 soldier_amount = null
 
