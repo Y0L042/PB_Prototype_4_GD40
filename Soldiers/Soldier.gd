@@ -20,7 +20,7 @@ var fps_factor: int = 120
 #-------------------------
 # Modifiers
 #-------------------------
-var speed: int = 250
+var speed: int = 350
 var health: int
 var radius: int
 
@@ -79,7 +79,8 @@ func soldier_move(delta: float, shared_area: Area2D, index: int, new_target: Vec
 	if randi() % fps_factor == 0:
 		var collision_data = body_test_motion_query()
 		if collision_data != null:
-			print(collision_data.get_collider_rid())
+#			print(collision_data.get_collider_rid())
+			pass
 
 	# Adjust soldier and area shape position
 	soldier_position += velocity_vector
